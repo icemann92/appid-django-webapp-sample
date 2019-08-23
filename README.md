@@ -1,4 +1,4 @@
-##Running the Sample
+## Running the Sample
 
 1. run `pip3 install -r requirements.txt`
 2. Configure App ID to work with the sample. Add the oauthServerUrl, client_id, and secret obtained from App ID to the `src/store/settings.py` file 

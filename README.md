@@ -1,12 +1,12 @@
 ## Running the Sample
 
-1. run `pip3 install -r requirements.txt`
+1. Run `pip3 install -r requirements.txt`
 2. Configure App ID to work with the sample. Add the oauthServerUrl, client_id, and secret obtained from App ID to the `src/store/settings.py` file 
     - oauthServerUrl to `SOCIAL_AUTH_APPID_OAUTH_SERVER_URL` 
     - client_id to `SOCIAL_AUTH_APPID_KEY` 
     - secret to `SOCIAL_AUTH_APPID_SECRET`
 
-3. python manage.py migrate
+3. Run `python manage.py migrate`
 5. Add the redirect url to your App Id instance. `http://localhost:8000\*`
 4. Finally run `python3 manage.py runserver`
 5. Sample app runs on http://localhost:8000

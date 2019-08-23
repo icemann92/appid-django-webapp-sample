@@ -1,0 +1,12 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+    {% if userdata %}
+        <div>
+            <h1>Welcome {{ user.email }}</h1>
+            <pre>{{ userdata }}</pre>
+        </div>
+    {% else %}
+    <p>User not logged in</p>
+    {% endif %}
+{% endblock %}

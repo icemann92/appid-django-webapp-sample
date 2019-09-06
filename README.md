@@ -7,7 +7,7 @@
     - secret to `SOCIAL_AUTH_APPID_SECRET`
 
 3. Run `python manage.py migrate`
-5. Add the redirect url to your App Id instance. `http://localhost:8000\*`
+5. Add the redirect url to your App Id instance. `http://localhost:8000/*`
 4. Finally run `python3 manage.py runserver`
 5. Sample app runs on http://localhost:8000
 6. Once you login. You can see view the access token on the homepage

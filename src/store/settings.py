@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import json
+from _collections import defaultdict
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -120,12 +122,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+AppID_CONFIG = defaultdict(str)
+if 'VCAP_SERVICES' in os.environ:
+    vcapEnv = json.loads(os.environ['VCAP_SERVICES'])
+    AppID_CONFIG = vcapEnv['AppID'][0]['credentials']
 
 # AppID settings
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
-SOCIAL_AUTH_APPID_OAUTH_SERVER_URL = 'APPID_OAUTH_SERVER_URL'
-SOCIAL_AUTH_APPID_KEY = 'APPID_CLIENT_ID_HERE'
-SOCIAL_AUTH_APPID_SECRET = 'APPID_SECRET_HERE'
+SOCIAL_AUTH_APPID_OAUTH_SERVER_URL = AppID_CONFIG['oauthServerUrl'] or 'APPID_OAUTH_SERVER_URL_HERE'
+SOCIAL_AUTH_APPID_KEY = AppID_CONFIG['clientId'] or 'APPID_CLIENT_ID_HERE'
+SOCIAL_AUTH_APPID_SECRET = AppID_CONFIG['secret'] or 'APPID_SECRET_HERE'
 
 
 AUTHENTICATION_BACKENDS = {

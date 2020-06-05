@@ -1,21 +1,25 @@
-certifi==2019.6.16
+-i https://pypi.org/simple/
+certifi==2020.4.5.1
+cffi==1.14.0
 chardet==3.0.4
-defusedxml==0.6.0
-Django==2.2.4
-ecdsa==0.13.2
-future==0.17.1
-idna==2.8
+cryptography==2.9.2
+defusedxml==0.6.0 ; python_version >= '3.0'
+django==2.2.13
+ecdsa==0.15
+future==0.18.2
+idna==2.9
 oauthlib==3.1.0
-pyasn1==0.4.6
-PyJWT==1.7.1
+pyasn1==0.4.8
+pycparser==2.20
+pyjwt==1.7.1
 python-jose==3.0.1
-python3-openid==3.1.0
-pytz==2019.2
-requests==2.22.0
-requests-oauthlib==1.2.0
+python3-openid==3.1.0 ; python_version >= '3.0'
+pytz==2020.1
+requests-oauthlib==1.3.0
+requests==2.23.0
 rsa==4.0
-six==1.12.0
+six==1.15.0
 social-auth-app-django==3.1.0
-social-auth-core==3.2.0
-sqlparse==0.3.0
-urllib3==1.25.3
+social-auth-core==3.3.3
+sqlparse==0.3.1
+urllib3==1.25.9
